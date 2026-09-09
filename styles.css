@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #07131b;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ENTRADA
+========================= */
+
+#inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.noche {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 30%, #183b4d 0%, #0b202c 38%, #050b10 85%);
+}
+
+/* Luna */
+
+.luna {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f4e8c9;
+    box-shadow:
+        0 0 25px rgba(244, 232, 201, 0.45),
+        0 0 70px rgba(244, 232, 201, 0.15);
+}
+
+/* Título */
+
+h1 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 15px;
+    color: #f4e8c9;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+}
+
+.subtitulo {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 35px;
+    color: #d8c9aa;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-style: italic;
+}
+
+/* Botella */
+
+.botella {
+    position: relative;
+    width: 105px;
+    height: 170px;
+    margin-bottom: 30px;
+    transform: rotate(-7deg);
+    filter: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s, opacity 0.8s;
+}
+
+.vidrio {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 95px;
+    height: 140px;
+    border: 4px solid rgba(190, 220, 220, 0.7);
+    border-radius: 25px 25px 30px 30px;
+    background: linear-gradient(
+        90deg,
+        rgba(100, 160, 165, 0.15),
+        rgba(220, 240, 235, 0.22),
+        rgba(70, 130, 140, 0.12)
+    );
+}
+
+.corcho {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 37px;
+    width: 32px;
+    height: 48px;
+    border-radius: 10px 10px 4px 4px;
+    background: #8b5a32;
+    border: 3px solid #bd8a50;
+}
+
+.papel-botella {
+    position: absolute;
+    top: 48px;
+    left: 22px;
+    width: 50px;
+    height: 70px;
+    background: #e8d3a5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Botón */
+
+button {
+    position: relative;
+    z-index: 2;
+    padding: 15px 32px;
+    border: 1px solid #e5d6b7;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #f4e8c9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e5d6b7;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+#carta {
+    display: none;
+    min-height: 100vh;
+    padding: 50px 20px;
+    background:
+        radial-gradient(circle at 50% 20%, #243c45, #07131b 75%);
+}
+
+#carta.mostrar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.papel {
+    width: min(820px, 94vw);
+    margin: 20px auto;
+    padding: 65px clamp(25px, 7vw, 75px);
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(120, 75, 25, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(120, 75, 25, 0.12), transparent 30%),
+        #e8d3a5;
+
+    border: 1px solid #967044;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.65),
+        inset 0 0 45px rgba(90, 55, 20, 0.18);
+
+    color: #3d2a1a;
+    line-height: 1.85;
+    font-size: 1.15rem;
+}
+
+.papel h2 {
+    margin: 0 0 40px;
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.papel p {
+    margin: 0 0 28px;
+}
+
+.palabras {
+    margin: 35px 0;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.palabras p {
+    margin: 10px 0;
+}
+
+.firma {
+    margin-top: 45px;
+    text-align: right;
+    font-style: italic;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .luna {
+        width: 65px;
+        height: 65px;
+        top: 7%;
+        right: 8%;
+    }
+
+    .noche {
+        padding: 50px 15px;
+    }
+
+    .botella {
+        transform: scale(0.9) rotate(-7deg);
+    }
+
+    .papel {
+        padding: 45px 25px;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .palabras {
+        font-size: 1.05rem;
+    }
+}
